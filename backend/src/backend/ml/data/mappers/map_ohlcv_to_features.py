@@ -18,6 +18,8 @@ def map_ohlcv_to_features(df: DataFrame) -> DataFrame:
         DataFrame: [Date, log_returns, rsi, macd, macd_hist, atr, hour_sin, hour_cos, day_sin, day_cos].
     """
 
+    df = df.sort_index()
+
     X = DataFrame(index=df.index)
 
     X["log_returns"] = np.log(df["Close"] / df["Close"].shift(1))
