@@ -20,7 +20,7 @@ def mock_ohlcv_data_long() -> DataFrame:
         "Volume": np.random.randint(1000, 5000, periods),
     }
     df = pd.DataFrame(data)
-    df.index = pd.date_range(start="2024-01-01", periods=periods, freq="H")
+    df.index = pd.date_range(start="2024-01-01", periods=periods, freq="h")
     return df
 
 
